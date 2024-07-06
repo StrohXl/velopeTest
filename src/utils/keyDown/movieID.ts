@@ -12,6 +12,12 @@ export default function movieId(event: any, dispath: Dispatch) {
       positionX = 1;
       Buttons?.getElementsByTagName("button")[positionX].focus();
       break;
+    case "ArrowUp":
+      const contentMenuIcons = document.getElementById("content-menu-icons");
+      setTimeout(() => {
+        contentMenuIcons?.querySelector("button")?.focus();
+      }, 50);
+      break;
     case "ArrowLeft":
       if (positionX == 0) {
         dispath(focusItem());
@@ -20,8 +26,8 @@ export default function movieId(event: any, dispath: Dispatch) {
         Buttons?.getElementsByTagName("button")[positionX].focus();
       }
       break;
-     case "Backspace":
-       dispath(focusItem())
-      break
+    case "Backspace":
+      dispath(focusItem());
+      break;
   }
 }

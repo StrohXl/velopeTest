@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const sidebar = createSlice({
   name: "sidebars",
   initialState: {
-    open: true,
+    open: false,
     position: 0,
   },
   reducers: {
@@ -16,7 +16,7 @@ export const sidebar = createSlice({
       state.open = true;
     },
     downPosition(state) {
-      state.position < 1 && state.position++;
+      state.position < 2 && state.position++;
     },
     upPosition(state) {
       const contentMenuIcons = document.getElementById("content-menu-icons");

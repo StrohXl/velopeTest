@@ -24,10 +24,13 @@ export default function keyDownSideBar(
       break;
     case "ArrowRight":
       dispath(changeOpenSideBar(false));
-      if (url == "/") {
-        dispath(focusCarousel());
+      if (url == "/" || url == "/tv") {
+        const contentGenres = document.getElementById("content-genres");
+        setTimeout(() => {
+          contentGenres?.querySelector("button")?.focus();
+        }, 50);
       }
-      if (url?.includes("movies/")) {
+      if (url?.includes("movies/") || url?.includes("tv/")) {
         document
           .getElementById("content-buttons-movie")
           ?.querySelector("button")

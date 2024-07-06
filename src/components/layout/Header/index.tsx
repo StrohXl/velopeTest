@@ -9,9 +9,11 @@ import { useDispatch } from "react-redux";
 
 import Logo from "./Logo";
 import keyDown from "@/utils/keyDown";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const dispath = useDispatch();
+  const path = usePathname();
 
   return (
     <AppBar sx={{ py: 1 }} position="fixed" elevation={0}>
@@ -22,13 +24,17 @@ export default function Header() {
         <Box sx={{ flexGrow: 1 }} />
         <Box id="content-menu-icons" display={"flex"} gap={1}>
           <IconButton
-            onKeyDown={(event) => keyDown(event, "content-menu-icons", dispath)}
+            onKeyDown={(event) =>
+              keyDown(event, "content-menu-icons", dispath, path)
+            }
             color="secondary"
           >
             <Notifications sx={{ fontSize: 30 }} />
           </IconButton>
           <IconButton
-            onKeyDown={(event) => keyDown(event, "content-menu-icons", dispath)}
+            onKeyDown={(event) =>
+              keyDown(event, "content-menu-icons", dispath, path)
+            }
             color="secondary"
           >
             <Person sx={{ fontSize: 30 }} />

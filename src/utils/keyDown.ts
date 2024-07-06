@@ -27,7 +27,7 @@ export default function keyDown(
       contentGenres(event, dispatch, genres);
       break;
     case "content-menu-icons":
-      menuIcons(event, dispatch);
+      menuIcons(event, dispatch, url);
       break;
   }
 }

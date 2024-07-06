@@ -22,6 +22,7 @@ import { RootState } from "@/app/store/store";
 import items from "./items";
 import keyDown from "@/utils/keyDown";
 import focusItem from "@/utils/focusItem";
+import { changeOpenSideBar } from "@/app/store/features/sidebar";
 
 export default function SideBar() {
   const dispath = useDispatch();
@@ -73,9 +74,9 @@ export default function SideBar() {
             >
               <ListItemButton
                 color="primary"
-                autoFocus={index === 0 && true}
                 onClick={() => {
                   item.link && router.push(item.link);
+                  dispath(changeOpenSideBar(false))
                 }}
                 sx={{
                   minHeight: 48,

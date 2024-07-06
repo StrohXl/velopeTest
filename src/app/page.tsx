@@ -2,7 +2,7 @@
 
 import { Box, Button, Grid, Typography } from "@mui/material";
 import { useQuery } from "react-query";
-import { useSelector , useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Swiper, SwiperSlide, SwiperRef } from "swiper/react";
 
 import getMovies from "@/utils/movies/getMovies";
@@ -52,7 +52,7 @@ export default function Home() {
   const genresList = [
     {
       id: 0,
-      name: "Default",
+      name: "All",
     },
     {
       id: 28,
@@ -81,6 +81,8 @@ export default function Home() {
       <Grid mb={3} id="content-genres">
         {genresList.map((item) => (
           <Button
+            id={item.id === 0 ? "ButtonFocus" : ""}
+            autoFocus={item.id === 0 && true}
             onKeyDown={(event) =>
               keyDown(event, "content-genres", dispath, "", {
                 id: item.id,

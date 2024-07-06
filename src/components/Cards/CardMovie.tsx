@@ -42,8 +42,9 @@ export default function CardMovie({ item, id }: { id: string; item: Movie }) {
           }}
         >
           <Image
-            fill
             title="asdf"
+            width={320}
+            height={193}
             src={
               item.backdrop_path == null
                 ? ""

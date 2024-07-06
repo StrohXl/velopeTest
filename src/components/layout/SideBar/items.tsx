@@ -1,4 +1,4 @@
-import { Search, Home } from "@mui/icons-material";
+import { Search, Movie, Tv, TvSharp } from "@mui/icons-material";
 
 const items = [
   {
@@ -9,11 +9,17 @@ const items = [
   },
   {
     id: 2,
-    title: "Home",
-    icon: <Home />,
+    title: "Movies",
+    icon: <Movie />,
     ref: 'side-bar-option',
     link: '/'
-
+  },
+  {
+    id: 2,
+    title: "Tv",
+    icon: <TvSharp />,
+    ref: 'side-bar-option',
+    link: '/tv'
   },
 ];
 
