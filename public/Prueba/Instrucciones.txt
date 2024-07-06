@@ -1,0 +1,123 @@
+Requisitos previos:
+
+1. Vaya al sitio web de The Movie Database y regístrese para obtener una clave API.
+(https://developers.themoviedb.org/3/getting-started/introduction).
+
+2. Arranque un proyecto JS con cualquier marco JS deseado. Esto podría ser DOM
+basado (por ejemplo, React Hooks, Preact, Svelte, SolidJS, etc.) o basado en WebGL (por ejemplo.
+PixiJS, AnimeJS, etc.) (el lenguaje/marco específico puede variar
+según el puesto al que postula).
+
+3. El texto mecanografiado es opcional, pero se prefiere cuando está disponible.
+Requisitos de la aplicación:
+Crear una aplicación que permita a un usuario explorar una colección de activos (películas,
+espectáculos), etc. Estos deben presentarse en forma de carruseles, que el usuario pueda
+navegue con las teclas de flechas del teclado (arriba y abajo para cambiar de carrusel,
+Izquierda y Derecha para desplazarse por los carruseles, Intro y Atrás para navegar dentro/fuera de
+la pantalla de detalles).
+
+El usuario tiene una barra de navegación superior, donde puede cambiar entre 4 y 5 diferentes
+géneros (el primer género debe ser “Todos”). Cambiar a un género específico debería
+actualizar los activos en consecuencia.
+Si el usuario selecciona un activo, la aplicación irá a una nueva pantalla de detalles del mismo.
+donde el usuario puede leer información al respecto o volver a la página principal
+navegación.
+
+La aplicación debe mostrarse en una relación de aspecto de 16:9, igual que la pantalla de un televisor. Pensar en
+AppleTV, Netflix o Youtube (en SmartTV) a la hora de pensar en la UX deseada.
+
+La aplicación deberá escalarse adecuadamente para resoluciones de 1280x720 y 1920x1080 en
+tiempo de carga. (no tiene que hacer esto dinámicamente en tiempo de ejecución, sino cuando el usuario
+abre la aplicación, debe estar correctamente escalada para ambas resoluciones)
+Recomendamos utilizar la función de emulación de dispositivo de su navegador para emular un televisor.
+pantalla (por ejemplo, en Chrome
+https://developer.chrome.com/docs/devtools/device-mode/)
+
+1
+
+enero 2024
+
+Ejemplo de interfaz de usuario de la aplicación:
+
+Se anima a los desarrolladores a mejorar el diseño de ejemplo siempre que la aceptación
+los criterios aún se cumplen.
+
+2
+
+enero 2024
+
+Criterios de aceptación:
+1. La navegación de la aplicación debe implementarse completamente con los botones del teclado: el
+teclas de flecha, Enter y Atrás. Cualquier prueba que no se pueda navegar completamente usando
+sólo esas claves serán rechazadas.
+
+a. Puntos de bonificación: compatibilidad con mouse/puntero además de las teclas del teclado
+soporte, puntero del mouse personalizado
+
+2. Cuando el usuario accede por primera vez a la aplicación, debería ver los carruseles
+con el contenido, o un indicador de carga hasta que estos estén listos. El enfoque debe
+estar en el primer elemento del menú de navegación superior (“Todos”), que debe estar
+presente desde el principio.
+
+a. Centrarse en cada elemento, tanto en el contenido como en el menú de navegación,
+debe ser visible para el usuario. Esto puede tomar la forma de cambiar el
+color base del artículo.
+
+b. Puntos de bonificación: un chapoteo de carga con un indicador de actividad animado
+que no se "cuelga" cuando la aplicación carga datos y medios. (Pista:
+Las animaciones CSS no están vinculadas a la CPU)
+
+3. El “contenido” (los carruseles de activos) debe estar formado por carruseles de al menos
+al menos 30 elementos por fila y al menos 10 filas. Cada artículo debe contener al menos
+al menos una imagen de cartel, título y año.
+
+a. Cuando se llega al final de una lista, el foco debe volver a la primera
+artículo.
+
+b. Al moverse por los carruseles, el usuario debería poder salir
+el botón presionado para moverse más rápido a través de los elementos. Este
+El movimiento continuo debe sentirse rápido.
+
+C. Puntos de bonificación: “desplazamiento infinito” o “envoltura” de los carruseles.
+
+d. Puntos de bonificación: carga inteligente y diferida bajo demanda de las listas y
+filas sin percepción de que algunas cosas están precargadas justo antes
+siendo mostrado
+
+4. A medida que el usuario se mueve por los carruseles, el elemento enfocado o "cursor"
+siempre debe permanecer en la pantalla. Ejemplos (observe el elemento enfocado, marcado
+(blanco, permanece a la vista cuando el usuario se mueve hacia la derecha):
+
+3
+
+enero 2024
+
+5. El usuario puede navegar desde el "contenido" (los carruseles de activos) hasta la navegación.
+menú y atrás.
+
+6. El usuario puede navegar entre los elementos del menú de navegación y
+al seleccionarlos, el contenido debería cambiar en consecuencia.
+
+7. El usuario puede seleccionar cualquier activo y, al hacerlo, es redirigido a un elemento.
+pantalla de detalles, donde pueden ver información sobre el activo. Esta página
+Al menos deberá mostrar el cartel del activo, título, año, descripción. El usuario puede
+presione "atrás" para volver a la página anterior (debe mantener el mismo género
+estaban navegando antes).
+
+4
+
+enero 2024
+a. Opcional: colocar una pequeña interfaz de usuario simulada en esta pantalla con botones como
+“Agregar a favoritos” o “Jugar ahora”
+
+8. Se debe tener especial cuidado con la velocidad de movimiento: SmartTV y
+Los dispositivos conectados consumen muy pocos recursos en comparación con un navegador, por lo que
+Las animaciones deben ser lo más fluidas posible pero también ágiles para que no
+toma mucho tiempo
+
+Cada uno de los puntos anteriores se evaluará individualmente. Se recibirán más comentarios
+dado después de una revisión del código y la aplicación.
+Entregables:
+- Enlace a un repositorio público de Github de la aplicación.
+- Un enlace a una implementación en la nube de la aplicación en ejecución (por ejemplo, heroku/vercel/etc.
+URL con la aplicación ejecutándose).
